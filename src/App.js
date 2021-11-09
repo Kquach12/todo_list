@@ -12,10 +12,14 @@ function App() {
     console.log(taskArray)
   }
 
+  const deleteFromTaskArray = (removableTask) => {
+    setTaskArray(taskArray.filter(task => task !== removableTask))
+  }
+
   return (
     <div className="App">
       <Form newTask = {addToTaskArray}/>
-      <Display todoList={taskArray}/>
+      <Display todoList={taskArray} removableTask={deleteFromTaskArray}/>
     </div>
   );
 }
